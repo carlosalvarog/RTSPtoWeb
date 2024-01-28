@@ -21,7 +21,7 @@ without the use of FFmpeg or GStreamer!
 
 1. Download source
    ```bash
-   $ git clone https://github.com/deepch/RTSPtoWeb
+   $ git clone https://github.com/carlosalvarog/RTSPtoWeb
    ```
 1. CD to Directory
    ```bash
