@@ -58,6 +58,10 @@ func HTTPAPIServer() {
 		public.GET("/pages/documentation", HTTPAPIServerDocumentation)
 		public.GET("/pages/player/all/:uuid/:channel", HTTPAPIPlayAll)
 		public.StaticFS("/static", http.Dir(Storage.ServerHTTPDir()+"/static"))
+
+		//forked
+		public.GET("/1", HTTPAPIServerBlankRTC)
+		public.GET("/2", HTTPAPIServerBlankHLS)
 	}
 
 	/*
@@ -153,6 +157,31 @@ func HTTPAPIServer() {
 	}
 
 }
+
+
+//forked
+func HTTPAPIServerBlankWebRTC(c *gin.Context) {
+	c.HTML(http.StatusOK, "blankWebRTC.tmpl", gin.H{
+		"port":    Storage.ServerHTTPPort(),
+		"streams": Storage.Streams,
+		"version": time.Now().String(),
+		"page":    "1",
+	})
+}
+
+func HTTPAPIServerBlankHLS(c *gin.Context) {
+	c.HTML(http.StatusOK, "blankHLS.tmpl", gin.H{
+		"port":    Storage.ServerHTTPPort(),
+		"streams": Storage.Streams,
+		"version": time.Now().String(),
+		"page":    "2",
+	})
+}
+
+
+//end forked
+
+
 
 // HTTPAPIServerIndex index file
 func HTTPAPIServerIndex(c *gin.Context) {
