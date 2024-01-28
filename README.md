@@ -26,6 +26,7 @@ without the use of FFmpeg or GStreamer!
 1. CD to Directory
    ```bash
     $ cd RTSPtoWeb/
+    $ sudo apt-get install golang --fix-missing
    ```
 1. Test Run
    ```bash
