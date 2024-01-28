@@ -160,7 +160,7 @@ func HTTPAPIServer() {
 
 
 //forked
-func HTTPAPIServerBlankWebRTC(c *gin.Context) {
+func HTTPAPIServerBlankRTC(c *gin.Context) {
 	c.HTML(http.StatusOK, "blankWebRTC.tmpl", gin.H{
 		"port":    Storage.ServerHTTPPort(),
 		"streams": Storage.Streams,
