@@ -29,6 +29,7 @@
         "0": {
           "url": "rtmp://171.25.232.10/12d525bc9f014e209c1280bc0d46a87e",
           "debug": false,
+           "on_demand": true,
           "audio": true
         }
       },
